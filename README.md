@@ -1,3 +1,13 @@
+This repo is a recreation of a tutorial on React-Scroll, using the newest React version and converting components from class to functional. My goal is to learn, and I intend to utilize more of the React-Scroll library.
+
+S/o to James Quick, who authored the original tutorial and repo.
+
+Link to original tutorial: https://www.digitalocean.com/community/tutorials/how-to-implement-smooth-scrolling-in-react
+
+Link to original public repo: https://github.com/do-community/React-With-Smooth-Scrolling
+
+<!-- boilerplate -->
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
