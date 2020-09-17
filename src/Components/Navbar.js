@@ -3,26 +3,27 @@ import logo from "../logo.svg";
 import { Link, animateScroll as scroll } from "react-scroll";
 
 function Navbar() {
-  //on refresh, state persists but window location remains... why?
+  //flipped in handleScroll
   const [viewLocation, setViewLocation] = useState({
     head: true,
     foot: false,
   });
 
-  //Need to trigger a re-render somehow - this only works 1x
-  const handleScroll = async () => {
-    if (viewLocation.head) {
-      await scroll.scrollToBottom();
-      setViewLocation({ head: false, foot: true });
-    } else if (viewLocation.foot) {
-      await scroll.scrollToTop();
-      setViewLocation({ head: true, foot: false });
-    }
-  };
 
   console.log("view", viewLocation);
 
   useEffect(() => {
+  //calls react-scroll fns. and sets local state variables.
+  //having trouble with props of scroll fns. - esp timing.
+    const handleScroll = async () => {
+      if (viewLocation.head) {
+        await scroll.scrollToBottom();
+        setViewLocation({ head: false, foot: true });
+      } else if (viewLocation.foot) {
+        await scroll.scrollToTop();
+        setViewLocation({ head: true, foot: false });
+      }
+    };
     setTimeout(() => handleScroll(), 4000);
   }, [viewLocation]);
 
